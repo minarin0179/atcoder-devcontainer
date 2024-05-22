@@ -1,0 +1,18 @@
+{
+	"name": "AtCoder Development Container",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"runArgs": ["--env-file",".devcontainer/devcontainer.env"],
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers-contrib/features/npm-package:1": {
+			"package": "atcoder-cli"
+		},
+		"ghcr.io/akhildevelops/devcontainer-features/pip:0": {
+			"PACKAGES": "online-judge-tools"
+		}
+	},
+	"postCreateCommand": "sh setup.sh"
+}

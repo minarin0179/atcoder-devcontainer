@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "online-judge-tools test",
+        "type": "shell",
+        "command": "oj t -c \"python ${file}\" -d ${fileDirname}/tests/",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "acc submit",
+        "type": "shell",
+        "command": "cd ${fileDirname} && acc s",
+        "problemMatcher": [],
+      },
+      {
+        "label": "acc new",
+        "type": "shell",
+        "command": "cd ${workspaceFolder}/abc && acc new ${input:contest-id}"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "contest-id",
+        "type": "promptString",
+        "description": "Contest ID"
+      }
+    ]
+  }
