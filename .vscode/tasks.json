@@ -13,13 +13,13 @@
       {
         "label": "acc submit",
         "type": "shell",
-        "command": "cd ${fileDirname} && acc s",
+        "command": "cd ${fileDirname} && acc s --skip-filename -- --guess-python-interpreter pypy",
         "problemMatcher": [],
       },
       {
         "label": "acc new",
         "type": "shell",
-        "command": "cd ${workspaceFolder}/abc && acc new ${input:contest-id}"
+        "command": "cd ${workspaceFolder}/contests && acc new ${input:contest-id} --template python"
       }
     ],
     "inputs": [
